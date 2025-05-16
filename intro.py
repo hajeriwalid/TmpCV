@@ -230,9 +230,23 @@ def main():
         st.write(cv["objective"])
 
     st.markdown("### Why Walid for this role?")
-    st.markdown("-   Strong alignment with Sales Engineer responsibilities.")
-    st.markdown("-   Proven track record in customer success and technical advisory.")
-    st.markdown("-   Expertise in cloud technologies and AI, crucial for innovation.")
+    st.markdown("-   Strong Experience in Customer Success")
+    st.markdown("-   Proven track record in technical advisory.")
+    st.markdown("-   Great team player, Coordinator & Customer advocate")
+    st.markdown("-   Used to high-stakes situations, Escalation Management")
+    st.markdown("-   Oracle Cloud knowledge, AI-Enthusiast =>  Crucial for Customer innovation & Growth")
+
+# --- Experience Highlights Section ---
+    st.header("Experience Highlights")
+    st.subheader("Relevant Professional Journey")
+    for job in cv["experience"]:
+        if job.get("title") != "ShopFromFrance": 
+            st.markdown(f"**{job['title']}**")
+            st.markdown(f"*{job['company']}* ({job['years']})")
+            if "responsibilities" in job:
+                for responsibility in job["responsibilities"]:
+                    st.markdown(f"- {responsibility}")
+            st.write("---") # Separator
 
 if __name__ == "__main__":
     main()
