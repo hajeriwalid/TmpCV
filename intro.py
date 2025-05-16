@@ -200,7 +200,7 @@ streamlit_outline = {
             "content": [
                 {"type": "markdown", "text": "## Ready to Drive Success Together"},
                 {"type": "markdown", "text": "I'm excited about the opportunity to bring my experience and passion to your team."},
-                {"type": "markdown", "text": {cv['personal']['linkedin']}"},
+                {"type": "markdown", "text": "**Linkedin:** {cv['personal']['linkedin']}"},
                 {"type": "markdown", "text": "Thank you for your time!"}
             ]
         }
