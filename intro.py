@@ -153,7 +153,7 @@ streamlit_outline = {
             "content": [
                 {"type": "markdown", "text": f"# {cv['personal']['name']}"},
                 {"type": "markdown", "text": f"## {cv['personal']['title']}"},
-                {"type": "markdown", "text": f"**Contact:** {cv['personal']['email']} | {cv['personal']['linkedin']}"},
+                {"type": "markdown", "text": f"**Contact:** {cv['personal']['linkedin']}"},
                 {"type": "markdown", "text": f"{cv['objective']}"},
                 {"type": "image", "url": "your_company_logo.png", "alt": "Company Logo", "width": 200}, # Replace with actual company logo
                 {"type": "markdown", "text": "### Why Walid for this role?"},
