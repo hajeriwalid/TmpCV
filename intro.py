@@ -1,5 +1,9 @@
 import re
 import json
+import streamlit as st
+st.title("Walid Hajeri - Sales Engineer Presentation")
+st.header("Introduction")
+st.write("Welcome to my presentation!")
 
 # Load CV data (replace with actual data loading if needed)
 cv_data = """
