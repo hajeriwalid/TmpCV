@@ -242,5 +242,31 @@ def main():
                     st.markdown(f"- {responsibility}")
             st.write("---") # Separator
 
+# --- Skills and Responsibilities Alignment Section ---
+    st.header("Deep Dive: Aligning Skills with Responsibilities")
+    st.subheader("Connecting My Experience to Your Needs")
+
+    # Extract job responsibilities
+    job_responsibilities = [item.strip() for item in re.split(r'\n\s*', job_description.split("Responsibilities")[1].split("Qualifications")[0]) if item.strip()]
+
+    for responsibility in job_responsibilities:
+        st.markdown(f"**{responsibility}**")
+        # Add specific examples from your CV for each responsibility
+        if responsibility == "Provide technical expertise and guidance to sales team and prospects.":
+            st.markdown("-   Example: At ORACLE, I led technical onboarding for new customers...")
+        elif responsibility == "Conduct product demonstrations and presentations.":
+            st.markdown("-   Example: At Axway, I proactively conducted product updates and trainings...")
+        elif responsibility == "Develop and deliver Proofs of Concept (POCs).":
+            st.markdown("-   Example: At BS NETVIBES, I provided strategic support to the business development team (including PoCs)...")
+        elif responsibility == "Respond to technical inquiries and RFPs.":
+            st.markdown("-   Example: At Viasatw, I coordinated RFI/RFP responses...")
+        elif responsibility == "Build strong relationships with key technical stakeholders.":
+            st.markdown("-   Example: At Axway, I liaised with Product Management / Sales / Partners/Support...")
+        elif responsibility == "Stay up-to-date on industry trends and technologies.":
+            st.markdown("-   Example: My recent certifications in Machine Learning and Generative AI demonstrate my commitment to staying current...")
+        else:
+            st.markdown("-   (Further examples can be provided upon request)")
+
+
 if __name__ == "__main__":
     main()
