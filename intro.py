@@ -13,7 +13,7 @@ def main():
     col1, col2 = st.columns([1, 2])
 
     with col1:
-        st.image("company_logo.png", width=200) # Replace with actual logo
+        st.image("https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", width=200) 
 
     with col2:
         st.subheader(cv["personal"]["title"])
