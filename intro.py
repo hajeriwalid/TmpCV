@@ -30,7 +30,7 @@ cv_data = """
     {
       "years": "2018-2022",
       "title": "Principal Customer Success Manager",
-      "company": "axway",
+      "company": "Axway",
       "location": "Paris",
       "responsibilities": [
         "CSM & Technical Account Management of all-tier cloud accounts across EMEA",
