@@ -42,7 +42,7 @@ cv_data = """
     {
       "years": "2018",
       "title": "Senior Technical Sales Engineer",
-      "company": "Viasatw",
+      "company": "Viasat",
       "location": "Dublin",
       "responsibilities": [
         "Strategic pre-sales support to the sales team for complex deals (+1M€ Deals) RFI/RFP coordination + leading technical answers for AWS deployments Sales Engineering process and material improvements"
@@ -62,19 +62,13 @@ cv_data = """
     {
       "years": "2012-2014",
       "title": "EMEA/AP Lead Technical Account Manager & Pre-sales",
-      "company": "BS NETVIBES (Dassault Systemes company)",
+      "company": "NETVIBES (Dassault Systemes company)",
       "location": "Paris",
       "responsibilities": [
         "Set up & lead the pre-sales & TAM activities for EMEA / AP region for 3DS Netvibes Provided strategic support to the business development team (including RFPs, PoCs, customer presentations & demos, solution architecture ...) and internally to Dassault System's sales engineers in $EMEA/AP$",
         "Product Management: produced & maintained internal competitive matrix and wrote sales battle cards Closed the 1st 600k$ deal with UAE customer and 1st deal with South Korean multinational"
       ],
       "scope": "Scope: Natural Language Processing, Web Apps, APIs, Digital Marketing"
-    },
-    {
-      "years": "2011-2012",
-      "company": "ShopFromFrance",
-      "location": "Paris",
-      "responsibilities": "In charge of all operations, including international remote team management, website development, digital marketing activities Served customers all over the world including Middle East, Australia, Europe, USA"
     }
   ],
   "education": [
