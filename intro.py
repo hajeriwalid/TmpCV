@@ -6,27 +6,6 @@ st.title("Walid Hajeri - Customer Engineer")
 st.header("Introduction")
 st.write("Welcome to my presentation!")
 
-def main():
-    st.title("Walid Hajeri - Customer Engineer Presentation")
-    st.header("Introduction")
-
-    col1, col2 = st.columns([1, 2])
-
-    with col1:
-        st.image("https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", width=200) 
-
-    with col2:
-        st.subheader(cv["personal"]["title"])
-        st.write(cv["objective"])
-
-    st.markdown("### Why Walid for this role?")
-    st.markdown("-   Strong alignment with Sales Engineer responsibilities.")
-    st.markdown("-   Proven track record in customer success and technical advisory.")
-    st.markdown("-   Expertise in cloud technologies and AI, crucial for innovation.")
-
-if __name__ == "__main__":
-    main()
-
 # Load CV data (replace with actual data loading if needed)
 cv_data = """
 {
@@ -236,3 +215,24 @@ streamlit_outline = {
 print(json.dumps(streamlit_outline, indent=4))
 #print(cv_data)
 #print(job_description)
+
+def main():
+    st.title("Walid Hajeri - Customer Engineer Presentation")
+    st.header("Introduction")
+
+    col1, col2 = st.columns([1, 2])
+
+    with col1:
+        st.image("https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg", width=200) 
+
+    with col2:
+        st.subheader(cv["personal"]["title"])
+        st.write(cv["objective"])
+
+    st.markdown("### Why Walid for this role?")
+    st.markdown("-   Strong alignment with Sales Engineer responsibilities.")
+    st.markdown("-   Proven track record in customer success and technical advisory.")
+    st.markdown("-   Expertise in cloud technologies and AI, crucial for innovation.")
+
+if __name__ == "__main__":
+    main()
