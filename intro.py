@@ -13,7 +13,7 @@ cv_data = """
         "location": "Paris Region, France",
         "linkedin": "http://www.linkedin.com/in/walidhajeri"
     },
-    "objective": "Experienced AI / Cloud Solutions Engineer with over 15 years of experience in the tech/cloud industry. Experienced AI / Cloud Solutions Engineer with over 15 years of experience in the tech/cloud industry",
+    "objective": "Experienced AI / Cloud Solutions Engineer with over 15 years of experience in the tech/cloud industry.",
     "experience": [
         {
             "years": "2022-present",
