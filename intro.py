@@ -174,13 +174,21 @@ def main():
     # Extract job responsibilities
     job_responsibilities = [item.strip() for item in re.split(r'\n\s*', job_description.split("Responsibilities")[1].split("Qualifications")[0]) if item.strip()]
 
+    responsibility_examples = {
+        "Conduct periodic Service Account Planning and Account Reviews.": [
+            "- At Oracle: Monthly/Quarterly Reviews + Technical Reviews + SR Reviews",
+            "- At Axway: Led Quarterly Business Reviews with customers"
+        ],
+        "Act as a point of contact for any major incidents, responsible for managing communication and customer expectations through resolution.": [
+            "- Example: Escalation Management"
+        ]
+    }
+
     for responsibility in job_responsibilities:
         st.markdown(f"**{responsibility}**")
-        # Add specific examples from your CV for each responsibility
-        if responsibility == "Conduct periodic Service Account Planning and Account Reviews.":
-            st.markdown("- At Oracle :  Monthly/Quarterly Reviews + Technical Reviews + SR Reviews")
-            st.markdown("- At Axway :  Led Quarterly Business Reviews with customers")
-        elif responsibility == "Act as a point of contact for any major incidents, responsible for managing communication and customer expectations through resolution.":            st.markdown("- Example: Escalation Management ")
+        if responsibility in responsibility_examples:
+            for example in responsibility_examples[responsibility]:
+                st.markdown(example)
         else:
             st.markdown("- (Further examples available)")
 
