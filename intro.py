@@ -253,8 +253,8 @@ def main():
     st.subheader("Relevant Professional Journey")
     for job in cv["experience"]:
         if job.get("title") != "ShopFromFrance": 
-            #st.markdown(f"**{job['title']}**")
-            st.markdown(f"<div class='highlight-on-hover job-title'>**{title}**</div>", unsafe_allow_html=True)
+            st.markdown(f"**{job['title']}**")
+            #st.markdown(f"<div class='highlight-on-hover job-title'>**{title}**</div>", unsafe_allow_html=True)
 
             st.markdown(f"*{job['company']}* ({job['years']})")
             if "responsibilities" in job:
