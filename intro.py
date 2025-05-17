@@ -177,18 +177,11 @@ def main():
     for responsibility in job_responsibilities:
         st.markdown(f"**{responsibility}**")
         # Add specific examples from your CV for each responsibility
-        if responsibility == "Provide technical expertise and guidance to sales team and prospects.":
-            st.markdown("- Example: At ORACLE, I led technical onboarding for new customers...")
-        elif responsibility == "Conduct product demonstrations and presentations.":
-            st.markdown("- Example: At Axway, I proactively conducted product updates and trainings...")
-        elif responsibility == "Develop and deliver Proofs of Concept (POCs).":
-            st.markdown("- Example: At NETVIBES, I provided strategic support including PoCs...")
-        elif responsibility == "Respond to technical inquiries and RFPs.":
-            st.markdown("- Example: At Viasat, I coordinated RFI/RFP responses...")
-        elif responsibility == "Build strong relationships with key technical stakeholders.":
-            st.markdown("- Example: At Axway, I liaised with Product Management / Sales / Partners/Support...")
-        elif responsibility == "Stay up-to-date on industry trends and technologies.":
-            st.markdown("- Example: My recent AI/ML certifications demonstrate this.")
+        if responsibility == "Conduct periodic Service Account Planning and Account Reviews.":
+            st.markdown("- At Oracle :  Monthly/Quarterly Reviews + Technical Reviews + SR Reviews")
+            st.markdown("- At Axway :  Led Quarterly Business Reviews with customers")
+        elif responsibility == "Act as a point of contact for any major incidents, responsible for managing communication and customer expectations through resolution.
+":            st.markdown("- Example: Escalation Management ")
         else:
             st.markdown("- (Further examples available)")
 
