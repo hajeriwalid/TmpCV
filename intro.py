@@ -135,7 +135,7 @@ Qualifications
 cv = json.loads(cv_data)
 
 def main():
-    st.title(f"{cv['personal']['name']} - Customer Engineer Presentation")
+    #st.title(f"{cv['personal']['name']} - Customer Engineer Presentation")
     st.header("Introduction")
 
     col1, col2 = st.columns([1, 2])
