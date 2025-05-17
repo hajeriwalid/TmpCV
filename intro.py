@@ -2,8 +2,6 @@ import re
 import json
 import streamlit as st
 
-def main():
-
 st.title("Walid Hajeri - Customer Engineer")
 #st.header("Introduction")
 #st.write("Welcome to my presentation!")
