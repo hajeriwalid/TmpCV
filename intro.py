@@ -20,20 +20,32 @@ def main():
         unsafe_allow_html=True,
     )
 
-st.title("Walid Hajeri - Customer Engineer !")
-st.header("Introduction")
-st.write("Welcome to my presentation!")
+st.title("Walid Hajeri - Customer Engineer")
+#st.header("Introduction")
+#st.write("Welcome to my presentation!")
 
 # Load CV data (replace with actual data loading if needed)
 cv_data = """
 {
 "personal": {
     "name": "WALID HAJERI",
-    "title": "Cloud/Al Customer Engineer",
+    "title": "Cloud/AI Customer Engineer",
     "location": "Paris Region, France",
     "linkedin": "http://www.linkedin.com/in/walidhajeri"
   },
-  "objective": "Accomplished Customer Success Engineer with a strong background in Cloud and App Dev, now Leveraging expertise in Al. Recently certified in Machine Learning Methods from UC San Diego Extension, with hands-on experience in Generative Al and Large Language Models (LLMs). A thought leader and strong communicator with a passion for innovative tech products, offering international experience (US, Ireland) across both enterprise and startup environments. Seeking a challenging role in a dynamic, international setting.",
+  "objective": "💻 Experienced AI / Cloud Solutions Engineer with over 15 years of experience in the tech/cloud industry.
+
+🤖 AI Aficionado: ML Methods certificate from University of California San Diego (2024), Nvidia certified AI in the Data Center Associate (2024), Machine Learning (Andrew Ng' Coursera /Stanford - in 2021), Oracle Generative AI Professional (2025). 
+
+🌎 International Experience: I have worked across international hubs in NYC, Paris, and Dublin, and served customers located in more than 30 countries.
+
+📈 Strategic Leadership: I have led technology adoption initiatives, coordinated cross-functional teams, and advised on product positioning / go-to-market strategies. 
+
+🎯 Digital Product Enthusiast: I thrive on the art and science of designing, developing, and marketing digital products that resonate with users. I’m always looking for customer feedback and enjoy liaising with product teams. 
+
+📚 Passionate about sharing my knowledge and experience, I authored a book on customer success management and occasionally share my insights on tech in my blog (https://walidhajeri.hashnode.dev/).
+
+🌱 A Lifelong Learner: I live to be creative, learn, and grow both professionally and as a human being. I ideate my best ideas when doing what I love most: walking, swimming, and spending time with my family. ",
   "experience": [
     {
       "years": "2022-present",
@@ -253,7 +265,9 @@ def main():
     st.subheader("Relevant Professional Journey")
     for job in cv["experience"]:
         if job.get("title") != "ShopFromFrance": 
-            st.markdown(f"**{job['title']}**")
+            #st.markdown(f"**{job['title']}**")
+            st.markdown(f"<div class='highlight-on-hover job-title'>**{title}**</div>", unsafe_allow_html=True)
+
             st.markdown(f"*{job['company']}* ({job['years']})")
             if "responsibilities" in job:
                 for responsibility in job["responsibilities"]:
