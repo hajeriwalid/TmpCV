@@ -33,7 +33,21 @@ cv_data = """
     "location": "Paris Region, France",
     "linkedin": "http://www.linkedin.com/in/walidhajeri"
   },
-  "objective": " Experienced AI / Cloud Solutions Engineer with over 15 years of experience in the tech/cloud industry. ",
+  "objective": " Experienced AI / Cloud Solutions Engineer with over 15 years of experience in the tech/cloud industry.
+  💻 Experienced AI / Cloud Solutions Engineer with over 15 years of experience in the tech/cloud industry.
+
+🤖 AI Aficionado: ML Methods certificate from University of California San Diego (2024), Nvidia certified AI in the Data Center Associate (2024), Machine Learning (Andrew Ng' Coursera /Stanford - in 2021), Oracle Generative AI Professional (2025). 
+
+🌎 International Experience: I have worked across international hubs in NYC, Paris, and Dublin, and served customers located in more than 30 countries.
+
+📈 Strategic Leadership: I have led technology adoption initiatives, coordinated cross-functional teams, and advised on product positioning / go-to-market strategies. 
+
+🎯 Digital Product Enthusiast: I thrive on the art and science of designing, developing, and marketing digital products that resonate with users. I’m always looking for customer feedback and enjoy liaising with product teams. 
+
+📚 Passionate about sharing my knowledge and experience, I authored a book on customer success management and occasionally share my insights on tech in my blog (https://walidhajeri.hashnode.dev/).
+
+🌱 A Lifelong Learner: I live to be creative, learn, and grow both professionally and as a human being. I ideate my best ideas when doing what I love most: walking, swimming, and spending time with my family. 
+",
   "experience": [
     {
       "years": "2022-present",
