@@ -184,13 +184,26 @@ def main():
         ]
     }
 
-    for responsibility in job_responsibilities:
+ # --- Skills and Responsibilities Alignment Section ---
+    st.header("Deep Dive: Aligning Skills with Responsibilities")
+    st.subheader("Connecting My Experience to Your Needs")
+
+    # Define job responsibilities and corresponding examples
+    responsibilities_examples = {
+        "Conduct periodic Service Account Planning and Account Reviews.": [
+            "- At Oracle: Monthly/Quarterly Reviews + Technical Reviews + SR Reviews",
+            "- At Axway: Led Quarterly Business Reviews with customers"
+        ],
+        "Act as a point of contact for any major incidents, responsible for managing communication and customer expectations through resolution.": [
+            "- Example: Escalation Management",
+        ]
+    }
+
+    # Display responsibilities and examples
+    for responsibility, examples in responsibilities_examples.items():
         st.markdown(f"**{responsibility}**")
-        if responsibility in responsibility_examples:
-            for example in responsibility_examples[responsibility]:
-                st.markdown(example)
-        else:
-            st.markdown("- (Further examples available)")
+        for example in examples:
+            st.markdown(f"- {example}")
 
 if __name__ == "__main__":
     main()
