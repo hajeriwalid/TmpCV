@@ -2,6 +2,24 @@ import re
 import json
 import streamlit as st
 
+def main():
+    st.markdown(
+        """
+        <style>
+        .highlight-on-hover {
+            transition: background-color 0.3s ease;
+        }
+        .highlight-on-hover:hover {
+            background-color: #f0f8ff; /* Light Alice Blue */
+        }
+        .job-title {
+            padding: 0.2em 0; /* Add some vertical padding */
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 st.title("Walid Hajeri - Customer Engineer !")
 st.header("Introduction")
 st.write("Welcome to my presentation!")
