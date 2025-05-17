@@ -180,8 +180,7 @@ def main():
         if responsibility == "Conduct periodic Service Account Planning and Account Reviews.":
             st.markdown("- At Oracle :  Monthly/Quarterly Reviews + Technical Reviews + SR Reviews")
             st.markdown("- At Axway :  Led Quarterly Business Reviews with customers")
-        elif responsibility == "Act as a point of contact for any major incidents, responsible for managing communication and customer expectations through resolution.
-":            st.markdown("- Example: Escalation Management ")
+        elif responsibility == "Act as a point of contact for any major incidents, responsible for managing communication and customer expectations through resolution.":            st.markdown("- Example: Escalation Management ")
         else:
             st.markdown("- (Further examples available)")
 
