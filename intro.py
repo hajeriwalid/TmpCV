@@ -146,7 +146,7 @@ def create_map_data():
         'city': ['Paris', 'Leeds', 'Tunis', 'San Diego', 'Stanford'],
         'lat': [48.8800, 53.8012, 36.8065, 32.7157, 37.4275],
         'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697],
-        'color': ['#ffff00', '#ffff00', '#ffff00', '#ffff00', '#ffff00']  # Explicitly repeated color
+        'color': ['#2ecc71', '#2ecc71', '#2ecc71', '#2ecc71', '#2ecc71']  # Explicitly repeated color
     })
     
     other_locations = pd.DataFrame({
