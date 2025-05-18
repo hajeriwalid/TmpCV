@@ -167,23 +167,6 @@ def main():
                     st.markdown(f"- {responsibility}")
             st.write("---") # Separator
 
-    # --- Skills and Responsibilities Alignment Section ---
-    st.header("Deep Dive: Aligning Skills with Responsibilities")
-    st.subheader("Connecting My Experience to Your Needs")
-
-    # Extract job responsibilities
-    job_responsibilities = [item.strip() for item in re.split(r'\n\s*', job_description.split("Responsibilities")[1].split("Qualifications")[0]) if item.strip()]
-
-    responsibility_examples = {
-        "Conduct periodic Service Account Planning and Account Reviews.": [
-            "- At Oracle: Monthly/Quarterly Reviews + Technical Reviews + SR Reviews",
-            "- At Axway: Led Quarterly Business Reviews with customers"
-        ],
-        "Act as a point of contact for any major incidents, responsible for managing communication and customer expectations through resolution.": [
-            "- Example: Escalation Management"
-        ]
-    }
-
  # --- Skills and Responsibilities Alignment Section ---
     st.header("Deep Dive: Aligning Skills with Responsibilities")
     st.subheader("Connecting My Experience to Your Needs")
@@ -196,7 +179,8 @@ def main():
         ],
         "Act as a point of contact for any major incidents, responsible for managing communication and customer expectations through resolution.": [
             "- Example: Escalation Management",
-        ]
+        ],
+        
     }
 
     # Display responsibilities and examples
