@@ -114,15 +114,16 @@ cv = json.loads(cv_data)
 
 def create_map_data():
     work_locations = pd.DataFrame({
-        'city': ['Paris', 'New York', 'Dublin'],
-        'lat': [48.8566, 40.73, 53.3498],  # Slightly adjusted Paris lat
-        'lon': [2.3522, -74.0060, -6.24],  # Slightly adjusted Dublin lon
-        'color': ['#FF5733'] * 3  # Orange-ish color for work
-    })
+            'city': ['Paris', 'New York', 'Dublin'],
+            'lat': [48.8566, 40.73, 53.3498],
+            'lon': [2.3522, -74.0060, -6.24],
+            'color': ['#FF5733', '#FF5733', '#FF5733']  # Explicitly repeated color
+        })
+
     customer_locations = pd.DataFrame({
         'city': ['Charenton-le-Pont', 'Jersey City', 'Bray', 'London', 'Seoul', 'Madrid', 'Barcelona', 'Rome', 'Geneva',
                  'Amsterdam', 'Pretoria', 'Doha', 'Mumbai', 'Brussels', 'Munich', 'Manchester',
-                 'Abu Dhabi', 'Porto', 'Rabat',  'Oslo', 'Helsinki', 'Manila', 'Fort Worth',
+                 'Abu Dhabi', 'Porto', 'Rabat', 'Oslo', 'Helsinki', 'Manila', 'Fort Worth',
                  'Porto-Novo', 'Abuja', 'Praia', 'Yamoussoukro', 'Banjul', 'Accra', 'Bissau',
                  'Conakry', 'Monrovia', 'Bamako', 'Niamey', 'Abidjan', 'Dakar', 'Freetown',
                  'Lomé', 'Washington, DC', 'Marseille', 'Lille', 'Bordeaux', 'Rennes'],
@@ -138,13 +139,14 @@ def create_map_data():
                 2.6323, 7.3985, -23.5000, -5.2767, -16.5780, -0.2079, -15.5042,
                 -13.7036, -10.8022, -8.0077, 2.1096, -4.0083, -17.4788, -13.1049,
                 -1.3159, -77.0364, 5.3698, 3.0573, -0.5792, -1.6778],
-        'color': ['#007BFF'] * 42  # Blue color for customers
+        'color': ['#007BFF'] * 42  # Repeated color
     })
+
     study_locations = pd.DataFrame({
         'city': ['Paris', 'Leeds', 'Tunis', 'San Diego', 'Stanford'],
-        'lat': [48.8800, 53.8012, 36.8065, 32.7157, 37.4275],  # Adjusted Paris lat
-        'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697], # Adjusted Paris lon
-        'color': ['#800080'] * 5  # Purple color for study
+        'lat': [48.8800, 53.8012, 36.8065, 32.7157, 37.4275],
+        'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697],
+        'color': ['#800080', '#800080', '#800080', '#800080', '#800080']  # Explicitly repeated color
     })
     return pd.concat([work_locations, customer_locations, study_locations], ignore_index=True)
 
