@@ -180,7 +180,12 @@ def main():
         "Act as a point of contact for any major incidents, responsible for managing communication and customer expectations through resolution.": [
             "- Example: Escalation Management",
         ],
-        
+        "Coordinate delivery of Oracle Services, operating as the primary delivery contact to the customer, aiding and facilitating customer communications and activities across other Oracle lines of business.": [
+            "- Example: Coordinate delivery of multiple Oracle Services including Technical Workshops (e.g. Patching workshop), Technical Reviews (HC), Consumption Reviews, SR Reviews, Go Live Assurance ",
+        ],
+         "Identify and submit delivery leads for new opportunities and contract renewals // Work collaboratively with sales, the delivery teams and customers to identify appropriate solutions.": [
+            "- Example: Uncovered multiple service delivery opportunities : Oracle Universiy, Consulting. Product needs : Full Stack Discovery need (Retail), Database Management, OS Management Hub (automotive), etc. ",
+        ],
     }
 
     # Display responsibilities and examples
