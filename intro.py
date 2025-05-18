@@ -146,13 +146,7 @@ def create_map_data():
         'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697], # Adjusted Paris lon
         'color': ['#800080'] * 5  # Purple color for study
     })
-    other_locations = pd.DataFrame({
-        'city': ['You may add other relevant cities here'],
-        'lat': [0],
-        'lon': [0],
-        'color': ['#808080']  # Grey color for others
-    })
-    return pd.concat([work_locations, customer_locations, study_locations, other_locations], ignore_index=True)
+    return pd.concat([work_locations, customer_locations, study_locations], ignore_index=True)
 
 
 
