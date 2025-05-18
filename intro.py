@@ -141,14 +141,13 @@ def create_map_data():
                 -1.3159],
         'color': ['#007BFF'] * 37 # Blue color for customers
     })
-
-other_locations = pd.DataFrame({
+    
+    other_locations = pd.DataFrame({
         'city': ['You may add other relevant cities here'],
         'lat': [0], # Replace with actual latitude
         'lon': [0], # Replace with actual longitude
         'color': ['#808080']  # Grey color for others
     })
-
     return pd.concat([work_locations, customer_locations, other_locations], ignore_index=True)
 
 
