@@ -119,7 +119,7 @@ def create_map_data():
         'lon': [2.3522, -74.0060, -6.2603],
         'color': ['#FF5733'] * 3  # Orange-ish color for work
     })
-
+    
     customer_locations = pd.DataFrame({
         'city': ['1. Charenton-le-Pont', '2. Jersey City', '3. Bray', '4. London', '5. Seoul', '6. Madrid', '7. Barcelona', '8. Rome', '9. Geneva',
                  '10. Amsterdam', '11. Pretoria', '12. Doha', '13. Mumbai', '14. Brussels', '15. Munich', '16. Manchester',
@@ -141,13 +141,13 @@ def create_map_data():
                 -1.3159, -77.0364, 5.3698, 3.0573, -0.5792, -1.6778],
         'color': ['#007BFF'] * 43  # Changed to 43 to match the new count
     })
-        other_locations = pd.DataFrame({
+    other_locations = pd.DataFrame({
             'city': ['You may add other relevant cities here'],
             'lat': [0], # Replace with actual latitude
             'lon': [0], # Replace with actual longitude
             'color': ['#808080']  # Grey color for others
         })
-
+    
     return pd.concat([work_locations, customer_locations, other_locations], ignore_index=True)
 
 
