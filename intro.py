@@ -1,6 +1,7 @@
 import re
 import json
 import streamlit as st
+import pandas as pd
 
 st.title("WALID HAJERI - Customer Engineer Presentation")
 
@@ -109,30 +110,49 @@ cv_data = """
 }
 """
 
-job_description = """
-About the job
-As a Sales Engineer, you will be the technical bridge between our sales team and our prospects. You will use your technical expertise to understand customer needs, demonstrate our product's value, and build trust throughout the sales process.
-
-Responsibilities
-
-    Provide technical expertise and guidance to sales team and prospects.
-    Conduct product demonstrations and presentations.
-    Develop and deliver Proofs of Concept (POCs).
-    Respond to technical inquiries and RFPs.
-    Build strong relationships with key technical stakeholders.
-    Stay up-to-date on industry trends and technologies.
-
-Qualifications
-
-    Bachelor's degree in a technical field (e.g., Computer Science, Engineering).
-    3+ years of experience as a Sales Engineer or similar role.
-    Strong technical skills in [relevant technologies - to be specified based on the company].
-    Excellent communication and presentation skills.
-    Ability to understand customer needs and translate them into technical solutions.
-    Proven track record of success in a sales environment.
-"""
-
 cv = json.loads(cv_data)
+
+def create_map_data():
+    work_locations = pd.DataFrame({
+        'city': ['Paris', 'New York', 'Dublin'],
+        'lat': [48.8566, 40.7128, 53.3498],
+        'lon': [2.3522, -74.0060, -6.2603],
+        'color': ['#FF5733'] * 3  # Orange-ish color for work
+    })
+
+    customer_locations = pd.DataFrame({
+        'city': ['Paris', 'Dublin', 'London', 'Seoul', 'Madrid', 'Barcelona', 'Rome', 'Geneva',
+                 'Amsterdam', 'Pretoria', 'Doha', 'Mumbai', 'Brussels', 'Munich', 'Manchester',
+                 'Abu Dhabi', 'Porto', 'Rabat',  'Oslo', 'Helsinki', 'Manila', 'Fort Worth',
+                 'Porto-Novo', 'Abuja', 'Praia', 'Yamoussoukro', 'Banjul', 'Accra', 'Bissau',
+                 'Conakry', 'Monrovia', 'Bamako', 'Niamey', 'Abidjan', 'Dakar', 'Freetown',
+                 'Lomé'],
+        'lat': [48.8566, 53.3498, 51.5074, 37.5665, 40.4168, 41.3851, 41.9028, 46.2022,
+                52.3702, -25.7461, 25.2854, 19.0760, 50.8333, 48.1371, 53.4808,
+                24.4511, 41.1496, 34.0253, 59.9139, 60.1699, 14.5995, 32.7554,
+                6.4779, 9.0579, 14.9214, 6.8206, 13.4531, 5.6037, 11.8596,
+                9.5167, 6.3105, 12.6500, 13.5197, 5.3524, 14.7105, 8.4605,
+                6.1305],
+        'lon': [2.3522, -6.2603, -0.1278, 126.9780, -3.7038, 2.1734, 12.4964, 6.1490,
+                4.8952, 28.1871, 51.5310, 72.8777, 4.3333, 11.5761, -2.2426,
+                54.3696, -8.6291, -6.8791, 10.7522, 24.9384, 120.9772, -97.3308,
+                2.6323, 7.3985, -23.5000, -5.2767, -16.5780, -0.2079, -15.5042,
+                -13.7036, -10.8022, -8.0077, 2.1096, -4.0083, -17.4788, -13.1049,
+                -1.3159],
+        'color': ['#007BFF'] * 37 # Blue color for customers
+    })
+
+     other_locations = pd.DataFrame({
+        'city': ['You may add other relevant cities here'],
+        'lat': [0], # Replace with actual latitude
+        'lon': [0], # Replace with actual longitude
+        'color': ['#808080']  # Grey color for others
+    })
+
+    return pd.concat([work_locations, customer_locations, other_locations], ignore_index=True)
+
+
+
 
 def main():
     #st.title(f"{cv['personal']['name']} - Customer Engineer Presentation")
@@ -193,6 +213,15 @@ def main():
         st.markdown(f"**{responsibility}**")
         for example in examples:
             st.markdown(f"- {example}")
+
+    st.header("Global Reach")
+    st.subheader("Where I've Worked and Who I've Served")
+    map_data = create_map_data()
+
+    st.map(map_data,
+         latitude='lat',
+         longitude='lon',
+         color='color')
 
 if __name__ == "__main__":
     main()
