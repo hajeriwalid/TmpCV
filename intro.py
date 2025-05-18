@@ -114,51 +114,42 @@ cv = json.loads(cv_data)
 
 def create_map_data():
     work_locations = pd.DataFrame({
-            'city': ['Paris', 'New York', 'Dublin'],
-            'lat': [48.8566, 40.73, 53.3498],  # Slightly adjusted Paris lat
-            'lon': [2.3522, -74.0060, -6.24],  # Slightly adjusted Dublin lon
-            'color': ['#FF5733'] * 3  # Orange-ish color for work
-        })
-    
+        'city': ['Paris', 'New York', 'Dublin'],
+        'lat': [48.8566, 40.73, 53.3498],  # Slightly adjusted Paris lat
+        'lon': [2.3522, -74.0060, -6.24],  # Slightly adjusted Dublin lon
+        'color': ['#FF5733'] * 3  # Orange-ish color for work
+    })
+
     customer_locations = pd.DataFrame({
-            'city': ['Charenton-le-Pont', 'Jersey City', 'Bray', 'London', 'Seoul', 'Madrid', 'Barcelona', 'Rome', 'Geneva',
-                     'Amsterdam', 'Pretoria', 'Doha', 'Mumbai', 'Brussels', 'Munich', 'Manchester',
-                     'Abu Dhabi', 'Porto', 'Rabat',  'Oslo', 'Helsinki', 'Manila', 'Fort Worth',
-                     'Porto-Novo', 'Abuja', 'Praia', 'Yamoussoukro', 'Banjul', 'Accra', 'Bissau',
-                     'Conakry', 'Monrovia', 'Bamako', 'Niamey', 'Abidjan', 'Dakar', 'Freetown',
-                     'Lomé', 'Washington, DC', 'Marseille', 'Lille', 'Bordeaux', 'Rennes'],
-            'lat': [48.826, 40.721, 53.202, 51.5074, 37.5665, 40.4168, 41.3851, 41.9028, 46.2022,
-                    52.3702, -25.7461, 25.2854, 19.0760, 50.8333, 48.1371, 53.4808,
-                    24.4511, 41.1496, 34.0253, 59.9139, 60.1699, 14.5995, 32.7554,
-                    6.4779, 9.0579, 14.9214, 6.8206, 13.4531, 5.6037, 11.8596,
-                    9.5167, 6.3105, 12.6500, 13.5197, 5.3524, 14.7105, 8.4605,
-                    6.1305, 38.8951, 43.2965, 50.6292, 44.8378, 48.1173],
-            'lon': [2.435, -74.041, -6.105, -0.1278, 126.9780, -3.7038, 2.1734, 12.4964, 6.1490,
-                    4.8952, 28.1871, 51.5310, 72.8777, 4.3333, 11.5761, -2.2426,
-                    54.3696, -8.6291, -6.8791, 10.7522, 24.9384, 120.9772, -97.3308,
-                    2.6323, 7.3985, -23.5000, -5.2767, -16.5780, -0.2079, -15.5042,
-                    -13.7036, -10.8022, -8.0077, 2.1096, -4.0083, -17.4788, -13.1049,
-                    -1.3159, -77.0364, 5.3698, 3.0573, -0.5792, -1.6778],
-            'color': ['#007BFF'] * 42  # Blue color for customers (updated count)
-        })
-    
+        'city': ['Charenton-le-Pont', 'Jersey City', 'Bray', 'London', 'Seoul', 'Madrid', 'Barcelona', 'Rome', 'Geneva',
+                 'Amsterdam', 'Pretoria', 'Doha', 'Mumbai', 'Brussels', 'Munich', 'Manchester',
+                 'Abu Dhabi', 'Porto', 'Rabat',  'Oslo', 'Helsinki', 'Manila', 'Fort Worth',
+                 'Porto-Novo', 'Abuja', 'Praia', 'Yamoussoukro', 'Banjul', 'Accra', 'Bissau',
+                 'Conakry', 'Monrovia', 'Bamako', 'Niamey', 'Abidjan', 'Dakar', 'Freetown',
+                 'Lomé', 'Washington, DC', 'Marseille', 'Lille', 'Bordeaux', 'Rennes'],
+        'lat': [48.826, 40.721, 53.202, 51.5074, 37.5665, 40.4168, 41.3851, 41.9028, 46.2022,
+                52.3702, -25.7461, 25.2854, 19.0760, 50.8333, 48.1371, 53.4808,
+                24.4511, 41.1496, 34.0253, 59.9139, 60.1699, 14.5995, 32.7554,
+                6.4779, 9.0579, 14.9214, 6.8206, 13.4531, 5.6037, 11.8596,
+                9.5167, 6.3105, 12.6500, 13.5197, 5.3524, 14.7105, 8.4605,
+                6.1305, 38.8951, 43.2965, 50.6292, 44.8378, 48.1173],
+        'lon': [2.435, -74.041, -6.105, -0.1278, 126.9780, -3.7038, 2.1734, 12.4964, 6.1490,
+                4.8952, 28.1871, 51.5310, 72.8777, 4.3333, 11.5761, -2.2426,
+                54.3696, -8.6291, -6.8791, 10.7522, 24.9384, 120.9772, -97.3308,
+                2.6323, 7.3985, -23.5000, -5.2767, -16.5780, -0.2079, -15.5042,
+                -13.7036, -10.8022, -8.0077, 2.1096, -4.0083, -17.4788, -13.1049,
+                -1.3159, -77.0364, 5.3698, 3.0573, -0.5792, -1.6778],
+        'color': ['#007BFF'] * 42  # Blue color for customers (updated count)
+    })
+
     other_locations = pd.DataFrame({
-            'city': ['You may add other relevant cities here'],
-            'lat': [0],  # Replace with actual latitude
-            'lon': [0],  # Replace with actual longitude
-            'color': ['#808080']  # Grey color for others
-        })
-    
+        'city': ['You may add other relevant cities here'],
+        'lat': [0],  # Replace with actual latitude
+        'lon': [0],  # Replace with actual longitude
+        'color': ['#808080']  # Grey color for others
+    })
+
     return pd.concat([work_locations, customer_locations, other_locations], ignore_index=True)
-
- #   study_locations = pd.DataFrame({
- #       'city': ['Paris', 'Leeds', 'Tunis', 'San Diego', 'Stanford'],
- #       'lat': [48.8800, 53.8012, 36.8065, 32.7157, 37.4275],
- #       'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697],
- #      'color': ['#800080', '#800080', '#800080', '#800080', '#800080']  # Explicitly repeated color
- #   })
- #   return pd.concat([work_locations, customer_locations], ignore_index=True)
-
 
 
 def main():
