@@ -148,7 +148,7 @@ def create_map_data():
         'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697],
         'color': ['#800080', '#800080', '#800080', '#800080', '#800080']  # Explicitly repeated color
     })
-    return pd.concat([work_locations, customer_locations, study_locations], ignore_index=True)
+    return pd.concat([work_locations, customer_locations], ignore_index=True)
 
 
 
