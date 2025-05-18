@@ -232,9 +232,9 @@ def main():
     st.markdown("""""")
     st.subheader('✍️ HashNode')
     col1,col2 = st.columns([0.95, 0.05])
-    st.expander('Display my latest posts'):
-        components.html(embed_rss['rss'],height=400)
-        st.markdown(""" <a href={"https://walidhajeri.hashnode.dev/rss.xml"}> <em>🔗 access to the link </a>""".format(info['Medium']), unsafe_allow_html=True)
+    st.expander('Display my latest posts')
+    components.html(embed_rss['rss'],height=400)
+    st.markdown(""" <a href={"https://walidhajeri.hashnode.dev/rss.xml"}> <em>🔗 access to the link </a>""".format(info['Medium']), unsafe_allow_html=True)
         
 
 if __name__ == "__main__":
