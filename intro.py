@@ -141,6 +141,14 @@ def create_map_data():
                 -1.3159, -77.0364, 5.3698, 3.0573, -0.5792, -1.6778],
         'color': ['#007BFF'] * 40  # Changed to 43 to match the new count
     })
+
+    study_locations = pd.DataFrame({
+        'city': ['Paris', 'Leeds', 'Tunis', 'San Diego', 'Stanford'],
+        'lat': [48.8800, 53.8012, 36.8065, 32.7157, 37.4275],
+        'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697],
+        'color': ['#800080', '#800080', '#800080', '#800080', '#800080']  # Explicitly repeated color
+    })
+    
     other_locations = pd.DataFrame({
             'city': ['You may add other relevant cities here'],
             'lat': [0], # Replace with actual latitude
@@ -148,7 +156,7 @@ def create_map_data():
             'color': ['#808080']  # Grey color for others
         })
     
-    return pd.concat([work_locations, customer_locations, other_locations], ignore_index=True)
+    return pd.concat([work_locations, customer_locations, study_locations, other_locations], ignore_index=True)
 
 
 def main():
