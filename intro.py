@@ -185,7 +185,7 @@ def main():
         ],
          "Identify and submit delivery leads for new opportunities and contract renewals // Work collaboratively with sales, the delivery teams and customers to identify appropriate solutions.": [
             "- Example: Uncovered multiple service delivery opportunities : Oracle Universiy, Consulting. Product needs : Full Stack Discovery need (Retail), Database Management, OS Management Hub (automotive), etc. ",
-        ],
+        ]
     }
 
     # Display responsibilities and examples
