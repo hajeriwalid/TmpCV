@@ -153,7 +153,7 @@ other_locations = pd.DataFrame({
         'color': ['#808080']  # Grey color for others
     })
 
-    return pd.concat([work_locations, customer_locations, study_locations, other_locations], ignore_index=True)
+return pd.concat([work_locations, customer_locations, study_locations, other_locations], ignore_index=True)
 
 
 
