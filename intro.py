@@ -146,7 +146,7 @@ def create_map_data():
         'city': ['Paris', 'Leeds', 'Tunis', 'San Diego', 'Stanford'],
         'lat': [48.8800, 53.8012, 36.8065, 32.7157, 37.4275],
         'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697],
-        'color': ['#800080', '#800080', '#800080', '#800080', '#800080']  # Explicitly repeated color
+        'color': ['#ffff00', '#ffff00', '#ffff00', '#ffff00', '#ffff00']  # Explicitly repeated color
     })
     
     other_locations = pd.DataFrame({
@@ -220,7 +220,7 @@ def main():
             st.markdown(f"- {example}")
 
     st.header("Global Reach")
-    st.subheader("Where I've Worked and Who I've Served")
+    st.subheader("Where I've Studied, Where I've Worked and Who I've Served")
     map_data = create_map_data()
 
     st.map(map_data,
