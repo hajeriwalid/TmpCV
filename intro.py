@@ -121,25 +121,25 @@ def create_map_data():
     })
     
     customer_locations = pd.DataFrame({
-        'city': ['1. Charenton-le-Pont', '2. Jersey City', '3. Bray', '4. London', '5. Seoul', '6. Madrid', '7. Barcelona', '8. Rome', '9. Geneva',
+        'city': ['4. London', '5. Seoul', '6. Madrid', '7. Barcelona', '8. Rome', '9. Geneva',
                  '10. Amsterdam', '11. Pretoria', '12. Doha', '13. Mumbai', '14. Brussels', '15. Munich', '16. Manchester',
                  '17. Abu Dhabi', '18. Porto', '19. Rabat', '20. Oslo', '21. Helsinki', '22. Manila', '23. Fort Worth',
                  '24. Porto-Novo', '25. Abuja', '26. Praia', '27. Yamoussoukro', '28. Banjul', '29. Accra', '30. Bissau',
                  '31. Conakry', '32. Monrovia', '33. Bamako', '34. Niamey', '35. Abidjan', '36. Dakar', '37. Freetown',
                  '38. Lomé', '39. Washington, DC', '40. Marseille', '41. Lille', '42. Bordeaux', '43. Rennes'], # Added numbers
-        'lat': [48.826, 40.721, 53.202, 51.5074, 37.5665, 40.4168, 41.3851, 41.9028, 46.2022,
+        'lat': [51.5074, 37.5665, 40.4168, 41.3851, 41.9028, 46.2022,
                 52.3702, -25.7461, 25.2854, 19.0760, 50.8333, 48.1371, 53.4808,
                 24.4511, 41.1496, 34.0253, 59.9139, 60.1699, 14.5995, 32.7554,
                 6.4779, 9.0579, 14.9214, 6.8206, 13.4531, 5.6037, 11.8596,
                 9.5167, 6.3105, 12.6500, 13.5197, 5.3524, 14.7105, 8.4605,
                 6.1305, 38.8951, 43.2965, 50.6292, 44.8378, 48.1173],
-        'lon': [2.435, -74.041, -6.105, -0.1278, 126.9780, -3.7038, 2.1734, 12.4964, 6.1490,
+        'lon': [-0.1278, 126.9780, -3.7038, 2.1734, 12.4964, 6.1490,
                 4.8952, 28.1871, 51.5310, 72.8777, 4.3333, 11.5761, -2.2426,
                 54.3696, -8.6291, -6.8791, 10.7522, 24.9384, 120.9772, -97.3308,
                 2.6323, 7.3985, -23.5000, -5.2767, -16.5780, -0.2079, -15.5042,
                 -13.7036, -10.8022, -8.0077, 2.1096, -4.0083, -17.4788, -13.1049,
                 -1.3159, -77.0364, 5.3698, 3.0573, -0.5792, -1.6778],
-        'color': ['#007BFF'] * 43  # Changed to 43 to match the new count
+        'color': ['#007BFF'] * 40  # Changed to 43 to match the new count
     })
     other_locations = pd.DataFrame({
             'city': ['You may add other relevant cities here'],
