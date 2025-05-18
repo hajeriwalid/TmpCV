@@ -142,12 +142,12 @@ def create_map_data():
         'color': ['#007BFF'] * 42  # Repeated color
     })
 
-    study_locations = pd.DataFrame({
-        'city': ['Paris', 'Leeds', 'Tunis', 'San Diego', 'Stanford'],
-        'lat': [48.8800, 53.8012, 36.8065, 32.7157, 37.4275],
-        'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697],
-        'color': ['#800080', '#800080', '#800080', '#800080', '#800080']  # Explicitly repeated color
-    })
+ #   study_locations = pd.DataFrame({
+ #       'city': ['Paris', 'Leeds', 'Tunis', 'San Diego', 'Stanford'],
+ #       'lat': [48.8800, 53.8012, 36.8065, 32.7157, 37.4275],
+ #       'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697],
+ #      'color': ['#800080', '#800080', '#800080', '#800080', '#800080']  # Explicitly repeated color
+ #   })
     return pd.concat([work_locations, customer_locations], ignore_index=True)
 
 
