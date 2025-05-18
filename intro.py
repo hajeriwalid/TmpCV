@@ -142,7 +142,7 @@ def create_map_data():
         'color': ['#007BFF'] * 37 # Blue color for customers
     })
 
-     other_locations = pd.DataFrame({
+other_locations = pd.DataFrame({
         'city': ['You may add other relevant cities here'],
         'lat': [0], # Replace with actual latitude
         'lon': [0], # Replace with actual longitude
