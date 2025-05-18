@@ -173,7 +173,7 @@ def main():
 
     # Define job responsibilities and corresponding examples
     responsibilities_examples = {
-        "Conduct periodic Service Account Planning and Account Reviews.": [
+        "Conduct periodic Service Account Planning and Account Reviews // Establish and maintain a delivery governance model with the customer at the management and executive levels.": [
             "- At Oracle: Monthly/Quarterly Reviews + Technical Reviews + SR Reviews",
             "- At Axway: Led Quarterly Business Reviews with customers"
         ],
