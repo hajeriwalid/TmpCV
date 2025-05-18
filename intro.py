@@ -113,13 +113,13 @@ cv_data = """
 cv = json.loads(cv_data)
 
 def create_map_data():
-     work_locations = pd.DataFrame({
+    work_locations = pd.DataFrame({
         'city': ['Paris', 'New York', 'Dublin'],
         'lat': [48.8566, 40.73, 53.3498],  # Slightly adjusted Paris lat
         'lon': [2.3522, -74.0060, -6.24],  # Slightly adjusted Dublin lon
         'color': ['#FF5733'] * 3  # Orange-ish color for work
     })
-customer_locations = pd.DataFrame({
+    customer_locations = pd.DataFrame({
         'city': ['Charenton-le-Pont', 'Jersey City', 'Bray', 'London', 'Seoul', 'Madrid', 'Barcelona', 'Rome', 'Geneva',
                  'Amsterdam', 'Pretoria', 'Doha', 'Mumbai', 'Brussels', 'Munich', 'Manchester',
                  'Abu Dhabi', 'Porto', 'Rabat',  'Oslo', 'Helsinki', 'Manila', 'Fort Worth',
@@ -140,21 +140,19 @@ customer_locations = pd.DataFrame({
                 -1.3159, -77.0364, 5.3698, 3.0573, -0.5792, -1.6778],
         'color': ['#007BFF'] * 42  # Blue color for customers
     })
-study_locations = pd.DataFrame({
+    study_locations = pd.DataFrame({
         'city': ['Paris', 'Leeds', 'Tunis', 'San Diego', 'Stanford'],
         'lat': [48.8800, 53.8012, 36.8065, 32.7157, 37.4275],  # Adjusted Paris lat
         'lon': [2.3000, -1.5486, 10.1815, -117.1611, -122.1697], # Adjusted Paris lon
         'color': ['#800080'] * 5  # Purple color for study
     })
-other_locations = pd.DataFrame({
+    other_locations = pd.DataFrame({
         'city': ['You may add other relevant cities here'],
         'lat': [0],
         'lon': [0],
         'color': ['#808080']  # Grey color for others
     })
-
-return pd.concat([work_locations, customer_locations, study_locations, other_locations], ignore_index=True)
-
+    return pd.concat([work_locations, customer_locations, study_locations, other_locations], ignore_index=True)
 
 
 
