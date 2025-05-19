@@ -169,6 +169,17 @@ def main():
         st.write(cv["objective"])
         st.markdown(f"**LinkedIn:** [My Profile]({cv['personal']['linkedin']})", unsafe_allow_html=True)
 
+
+    st.header("Global Reach")
+    st.subheader("Where I've Studied, Where I've Worked and Who I've Served")
+    map_data = create_map_data()
+
+    st.map(map_data,
+         latitude='lat',
+         longitude='lon',
+         color='color')
+
+
     st.markdown("### Why I'm a Great Fit")
     st.markdown("- Strong Experience in Customer Success")
     st.markdown("- Proven track record in technical advisory.")
@@ -215,14 +226,7 @@ def main():
         for example in examples:
             st.markdown(f"- {example}")
 
-    st.header("Global Reach")
-    st.subheader("Where I've Studied, Where I've Worked and Who I've Served")
-    map_data = create_map_data()
-
-    st.map(map_data,
-         latitude='lat',
-         longitude='lon',
-         color='color')
+   
 
     # Document Q&A with Anthropic Claude section
     st.header("📝 Q&A on my book powered by Anthropic")
