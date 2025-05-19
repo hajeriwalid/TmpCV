@@ -258,7 +258,7 @@ def main():
         response = client.completions.create(
             prompt=prompt,
             stop_sequences=[anthropic.HUMAN_PROMPT],
-            model="claude-3-7-sonnet-20250219",  # claude-v1 or "claude-2" for Claude 2 model
+            model="claude-3-haiku-20240307",  # claude-v1 or "claude-2" for Claude 2 model
             max_tokens_to_sample=100,
         )
         st.write("### Answer")
