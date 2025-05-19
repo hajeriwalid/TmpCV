@@ -2,6 +2,8 @@ import re
 import json
 import streamlit as st
 import pandas as pd
+import streamlit.components.v1 as components
+
 
 st.title("WALID HAJERI - Customer Engineer Presentation")
 
