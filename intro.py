@@ -171,7 +171,7 @@ def main():
 
     # --- International Section ---
     st.header("International Experience Highlights")
-    st.subheader("("Where I've Studied, Where I've Worked and Who I've Served")
+    st.subheader("Where I've Studied, Where I've Worked and Who I've Served")
     map_data = create_map_data()
 
     st.map(map_data,
