@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import streamlit.components.v1 as components
 import anthropic
-
+import xml.etree.ElementTree as ET
 
 st.title("WALID HAJERI - Customer Engineer Presentation")
 
@@ -238,7 +238,7 @@ def main():
         #"[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/1_File_Q%26A.py)"
         #"[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
     
-    st.title("📝  Q&A on my book with Anthropic")
+    st.title("📝  Q&A on my book powered by Anthropic")
     uploaded_file = st.file_uploader("Upload an article", type=("txt", "md"))
     question = st.text_input(
         "Ask something about the article",
@@ -255,12 +255,73 @@ def main():
         {article}\n\n</article>\n\n{question}{anthropic.AI_PROMPT}"""
     
         client = anthropic.Client(api_key=anthropic_api_key)
-        response = client.completions.create(
-            prompt=prompt,
-            stop_sequences=[anthropic.HUMAN_PROMPT],
-            model="claude-2",  # claude-v1 or "claude-2" for Claude 2 model
-            max_tokens_to_sample=100,
-        )
+       
+
+        ###debut insert
+
+        #client = anthropic.Anthropic(api_key=api_key)
+        try:
+            with st.spinner("Analyzing..."):
+                response = client.messages.create(
+                    model="claude-3-5-sonnet-20240620",
+                    max_tokens=3000,
+                    temperature=0,
+                    system=system_message,
+                    messages=[{"role": "user", "content": input_xml}]
+                )
+
+            # Extract the content from the response
+            content = response.content[0].text
+
+            # Remove any non-XML content before the opening <output> tag
+            content = re.sub(r'^.*?(?=<output>)', '', content, flags=re.DOTALL)
+        except Exception as e:
+            st.error(f"An error occurred: {str(e)}")
+            st.stop()
+
+        # Clear the analysis placeholder
+        analysis_placeholder.empty()
+
+        # Calculate and display the total time taken
+        end_time = time.time()
+        total_time = end_time - start_time
+        st.success(f"Enhancement and analysis completed in {total_time:.2f} seconds")
+
+        # Parse the XML response
+        try:
+            root = ET.fromstring(content)
+        except ET.ParseError as e:
+            st.error(f"Failed to parse XML response: {str(e)}")
+            st.text("Raw response:")
+            st.text(content)
+            st.stop()
+
+        # Display results
+        st.markdown("## Enhancements")
+        
+        st.markdown("### No words changed, only emojis added")
+        st.text_area("Original text with emojis added", root.find('no_word_change').text, height=400, label_visibility="hidden")
+                
+        st.markdown("### Text enhanced, emojis also added")
+        st.text_area("Enhanced text with emojis added", root.find('word_change').text, height=400, label_visibility="hidden")
+
+        st.markdown("## Improvement Suggestions")
+        
+        st.markdown("### Spelling and Grammar Mistakes")
+        st.markdown(root.find('spelling_grammar_mistakes').text)
+        
+        st.markdown("### Logical Inconsistencies")
+        st.markdown(root.find('logical_inconsistencies').text)
+        
+        st.markdown("### Temporal Inconsistencies")
+        st.markdown(root.find('temporal_inconsistencies').text)
+        
+        st.markdown("### Missing Information / Needs more clarity")
+        st.markdown(root.find('missing_information').text)
+
+        ###fin insert
+
+
         st.write("### Answer")
         st.write(response.completion)
 
