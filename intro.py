@@ -238,7 +238,7 @@ def main():
         #"[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/1_File_Q%26A.py)"
         #"[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
     
-    st.title("📝 File Q&A with Anthropic")
+    st.title("📝  Q&A on my book with Anthropic")
     uploaded_file = st.file_uploader("Upload an article", type=("txt", "md"))
     question = st.text_input(
         "Ask something about the article",
@@ -258,14 +258,11 @@ def main():
         response = client.completions.create(
             prompt=prompt,
             stop_sequences=[anthropic.HUMAN_PROMPT],
-            model="claude-v1",  # "claude-2" for Claude 2 model
+            model="claude-3-7-sonnet-20250219",  # claude-v1 or "claude-2" for Claude 2 model
             max_tokens_to_sample=100,
         )
         st.write("### Answer")
         st.write(response.completion)
-
-
-        
 
 if __name__ == "__main__":
     main()
