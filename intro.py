@@ -180,6 +180,21 @@ def main():
          color='color')
 
 
+    # --- Oracle Section ---
+    st.header("Why Oracle")
+    st.markdown("- The fastest growing Cloud Hyperscaler - +49% Growth in Q3 2025 for IaaS")
+    st.markdown("- Top Company for Career Growth")
+    st.markdown("- One of the most innovative companies in the world. Data is at the heart of the AI revolution")
+    st.markdown("- The Most Complete Cloud Portfolio to Power Customer Transformation")
+
+    # --- CS Section ---
+    st.header("Oracle Customer Success")
+    st.markdown("- Integrated with Oracle’s product development teams")
+    st.markdown("- A team of +13000 Global Experts : ACS, OU, CSMs, Success Assurance, Partner Success Managers, Global Services Delivery")
+    st.markdown("- CSS Culture : Proactive, Business Goal Achievement, Focus on Value/Adoption/ROI, Customer Advocacy")
+    st.markdown("-All the necessary tooling : Cloud Success Navigator, Solution Support Center (Intelligent operations")
+
+    st.header("### Why I'm a Great Fi")
     st.markdown("### Why I'm a Great Fit")
     st.markdown("- Strong Experience in Customer Success")
     st.markdown("- Proven track record in technical advisory.")
@@ -187,19 +202,7 @@ def main():
     st.markdown("- Used to high-stakes situations, Escalation Management")
     st.markdown("- Oracle Cloud knowledge, AI-Enthusiast => Crucial for Customer innovation & Growth")
 
-     # --- Oracle Section ---
-    st.header("Why Oracle")
-    st.markdown("- The fastest growing Cloud Hyperscaler - +49% Growth in Q3 2025 for IaaS")
-    st.markdown("- Top Company for Career Growth")
-    st.markdown("- One of the most innovative companies in the world. Data is at the heart of the AI revolution")
-    st.markdown("- The Most Complete Cloud Portfolio to Power Customer Transformation")
 
-    # --- Oracle Section ---
-    st.header("Oracle Customer Success")
-    st.markdown("- Integrated with Oracle’s product development teams")
-    st.markdown("- A team of +13000 Global Experts : ACS, OU, CSMs, Success Assurance, Partner Success Managers, Global Services Delivery")
-    st.markdown("- CSS Culture : Proactive, Business Goal Achievement, Focus on Value/Adoption/ROI, Customer Advocacy")
-    st.markdown("-All the necessary tooling : Cloud Success Navigator, Solution Support Center (Intelligent operations")
 
     # --- Experience Highlights Section ---
     st.header("Experience Highlights")
