@@ -190,12 +190,12 @@ def main():
     # --- CS Section ---
     st.header("Oracle Customer Success")
     st.markdown("- Integrated with Oracle’s product development teams")
-    st.markdown("- A team of +13000 Global Experts : ACS, OU, CSMs, Success Assurance, Partner Success Managers, Global Services Delivery")
+    st.markdown("- A team of +13000 Global Experts : ACS, Oracle University, CSMs, Success Assurance, Partner Success Managers, Global Services Delivery")
     st.markdown("- CSS Culture : Proactive, Business Goal Achievement, Focus on Value/Adoption/ROI, Customer Advocacy")
-    st.markdown("-All the necessary tooling : Cloud Success Navigator, Solution Support Center (Intelligent operations")
+    st.markdown("-All the necessary tooling : Cloud Success Navigator, Solution Support Center (Intelligent operations)")
 
     st.header("### Why I'm a Great Fi")
-    st.markdown("### Why I'm a Great Fit")
+    #st.markdown("### Why I'm a Great Fit")
     st.markdown("- Strong Experience in Customer Success")
     st.markdown("- Proven track record in technical advisory.")
     st.markdown("- Great team player, Coordinator & Customer advocate")
