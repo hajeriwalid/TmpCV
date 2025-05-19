@@ -259,6 +259,10 @@ def main():
 
         ###debut insert
 
+        # Read system message from file
+        with open("system_message.txt", "r") as file:
+            system_message = file.read()
+
         client = anthropic.Anthropic(api_key=anthropic_api_key)
         try:
             with st.spinner("Analyzing..."):
