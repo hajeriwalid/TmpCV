@@ -257,7 +257,7 @@ def main():
                 
                 # Create a messages request using the Messages API
                 response = client.messages.create(
-                    model="claude-3-7-sonnet-20250219",
+                    model="claude-3-5-sonnet-20241022",
                     max_tokens=3000,
                     temperature=0,
                     system="You are a helpful assistant that answers questions about documents. Be concise and accurate in your responses.",
