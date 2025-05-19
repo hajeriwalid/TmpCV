@@ -169,7 +169,7 @@ def main():
         st.write(cv["objective"])
         st.markdown(f"**LinkedIn:** [My Profile]({cv['personal']['linkedin']})", unsafe_allow_html=True)
 
-
+    st.markdown("### International Section")
     st.header("Global Reach")
     st.subheader("Where I've Studied, Where I've Worked and Who I've Served")
     map_data = create_map_data()
