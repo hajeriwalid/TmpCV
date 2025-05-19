@@ -1,14 +1,11 @@
-import re
 import json
 import streamlit as st
 import pandas as pd
-import streamlit.components.v1 as components
 import anthropic
-import xml.etree.ElementTree as ET
 
 st.title("WALID HAJERI - Customer Engineer Presentation")
 
-# Load CV data (modified for proper JSON formatting)
+# Load CV data
 cv_data = """
 {
     "personal": {
@@ -161,11 +158,7 @@ def create_map_data():
     
     return pd.concat([work_locations, customer_locations, study_locations, other_locations], ignore_index=True)
 
-
 def main():
-    #st.title(f"{cv['personal']['name']} - Customer Engineer Presentation")
-    st.header("Introduction")
-
     col1, col2 = st.columns([1, 2])
 
     with col1:
@@ -195,7 +188,7 @@ def main():
                     st.markdown(f"- {responsibility}")
             st.write("---") # Separator
 
- # --- Skills and Responsibilities Alignment Section ---
+    # --- Skills and Responsibilities Alignment Section ---
     st.header("Deep Dive: Aligning Skills with Responsibilities")
     st.subheader("Connecting My Experience to Your Needs")
 
@@ -231,103 +224,59 @@ def main():
          longitude='lon',
          color='color')
 
-    #Anthropic Q&A
-    with st.sidebar:
-        anthropic_api_key=st.secrets["anthropic_api_key"]
-        #anthropic_api_key = st.text_input("Anthropic API Key", key="file_qa_api_key", type="password")
-        #"[View the source code](https://github.com/streamlit/llm-examples/blob/main/pages/1_File_Q%26A.py)"
-        #"[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
+    # Document Q&A with Anthropic Claude section
+    st.header("📝 Q&A on my book powered by Anthropic")
     
-    st.title("📝  Q&A on my book powered by Anthropic")
+    # Get API key from secrets
+    anthropic_api_key = st.secrets.get("anthropic_api_key", "")
+    
+    if not anthropic_api_key:
+        anthropic_api_key = st.sidebar.text_input("Anthropic API Key", type="password")
+        if not anthropic_api_key:
+            st.sidebar.warning("Please enter your Anthropic API key to use the Q&A feature")
+    
+    # File uploader for document
     uploaded_file = st.file_uploader("Upload an article", type=("txt", "md"))
+    
+    # Question input
     question = st.text_input(
         "Ask something about the article",
         placeholder="Can you give me a short summary?",
         disabled=not uploaded_file,
     )
     
-    if uploaded_file and question and not anthropic_api_key:
-        st.info("Please add your Anthropic API key to continue.")
-    
+    # Process if we have all required inputs
     if uploaded_file and question and anthropic_api_key:
-        article = uploaded_file.read().decode()
-        prompt = f"""{anthropic.HUMAN_PROMPT} Here's an article:\n\n<article>
-        {article}\n\n</article>\n\n{question}{anthropic.AI_PROMPT}"""
-    
-        #client = anthropic.Client(api_key=anthropic_api_key)
-       
-
-        ###debut insert
-
-        # Read system message from file
-        with open("system_message.txt", "r") as file:
-            system_message = file.read()
-
-        client = anthropic.Anthropic(api_key=anthropic_api_key)
-        try:
-            with st.spinner("Analyzing..."):
+        with st.spinner("Analyzing your document..."):
+            try:
+                # Read article content
+                article = uploaded_file.read().decode()
+                
+                # Initialize Anthropic client with the API key
+                client = anthropic.Anthropic(api_key=anthropic_api_key)
+                
+                # Create a messages request using the Messages API
                 response = client.messages.create(
                     model="claude-3-7-sonnet-20250219",
                     max_tokens=3000,
                     temperature=0,
-                    system=system_message,
-                    messages=[{"role": "user", "content": input_xml}]
+                    system="You are a helpful assistant that answers questions about documents. Be concise and accurate in your responses.",
+                    messages=[
+                        {
+                            "role": "user", 
+                            "content": f"Here's an article:\n\n<article>\n{article}\n</article>\n\nPlease answer this question about the article: {question}"
+                        }
+                    ]
                 )
-
-            # Extract the content from the response
-            content = response.content[0].text
-
-            # Remove any non-XML content before the opening <output> tag
-            content = re.sub(r'^.*?(?=<output>)', '', content, flags=re.DOTALL)
-        except Exception as e:
-            st.error(f"An error occurred: {str(e)}")
-            st.stop()
-
-        # Clear the analysis placeholder
-        analysis_placeholder.empty()
-
-        # Calculate and display the total time taken
-        end_time = time.time()
-        total_time = end_time - start_time
-        st.success(f"Enhancement and analysis completed in {total_time:.2f} seconds")
-
-        # Parse the XML response
-        try:
-            root = ET.fromstring(content)
-        except ET.ParseError as e:
-            st.error(f"Failed to parse XML response: {str(e)}")
-            st.text("Raw response:")
-            st.text(content)
-            st.stop()
-
-        # Display results
-        st.markdown("## Enhancements")
-        
-        st.markdown("### No words changed, only emojis added")
-        st.text_area("Original text with emojis added", root.find('no_word_change').text, height=400, label_visibility="hidden")
                 
-        st.markdown("### Text enhanced, emojis also added")
-        st.text_area("Enhanced text with emojis added", root.find('word_change').text, height=400, label_visibility="hidden")
-
-        st.markdown("## Improvement Suggestions")
-        
-        st.markdown("### Spelling and Grammar Mistakes")
-        st.markdown(root.find('spelling_grammar_mistakes').text)
-        
-        st.markdown("### Logical Inconsistencies")
-        st.markdown(root.find('logical_inconsistencies').text)
-        
-        st.markdown("### Temporal Inconsistencies")
-        st.markdown(root.find('temporal_inconsistencies').text)
-        
-        st.markdown("### Missing Information / Needs more clarity")
-        st.markdown(root.find('missing_information').text)
-
-        ###fin insert
-
-
-        st.write("### Answer")
-        st.write(response.completion)
+                # Extract and display the response
+                st.write("### Answer")
+                st.write(response.content[0].text)
+                
+            except Exception as e:
+                st.error(f"An error occurred: {str(e)}")
+    elif uploaded_file and question and not anthropic_api_key:
+        st.info("Please add your Anthropic API key to continue.")
 
 if __name__ == "__main__":
     main()
