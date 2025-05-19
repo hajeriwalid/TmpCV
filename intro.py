@@ -254,12 +254,12 @@ def main():
         prompt = f"""{anthropic.HUMAN_PROMPT} Here's an article:\n\n<article>
         {article}\n\n</article>\n\n{question}{anthropic.AI_PROMPT}"""
     
-        client = anthropic.Client(api_key=anthropic_api_key)
+        #client = anthropic.Client(api_key=anthropic_api_key)
        
 
         ###debut insert
 
-        #client = anthropic.Anthropic(api_key=api_key)
+        client = anthropic.Anthropic(api_key=anthropic_api_key)
         try:
             with st.spinner("Analyzing..."):
                 response = client.messages.create(
