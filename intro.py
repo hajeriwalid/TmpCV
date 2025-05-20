@@ -194,8 +194,7 @@ def main():
     st.markdown("- CSS Culture : Proactive, Business Goal Achievement, Focus on Value/Adoption/ROI, Customer Advocacy")
     st.markdown("-All the necessary tooling : Cloud Success Navigator, Solution Support Center (Intelligent operations)")
 
-    st.header("### Why I'm a Great Fit")
-    #st.markdown("### Why I'm a Great Fit")
+    st.header("Why I'm a Great Fit")
     st.markdown("- Strong Experience in Customer Success")
     st.markdown("- Proven track record in technical advisory.")
     st.markdown("- Great team player, Coordinator & Customer advocate")
