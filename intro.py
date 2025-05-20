@@ -232,7 +232,7 @@ def main():
             "- Example: Coordinate delivery of multiple Oracle Services including Technical Workshops (e.g. Patching workshop), Technical Reviews (HC), Consumption Reviews, SR Reviews, Go Live Assurance ",
         ],
          "Identify and submit delivery leads for new opportunities and contract renewals // Work collaboratively with sales, the delivery teams and customers to identify appropriate solutions.": [
-            "- Example: Uncovered multiple service delivery opportunities : Oracle Universiy, Consulting. Product needs : Full Stack Discovery need (Retail), Database Management, OS Management Hub (automotive), etc. ",
+            "- Example: Uncovered multiple service delivery opportunities : Oracle Universiy, Consulting. Product needs : Full Stack Discovery need (Retail), Data Safe (Retail), Database Management, OS Management Hub (automotive), etc. ",
         ]
     }
 
